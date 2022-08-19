@@ -12,7 +12,7 @@ $(document).ready(function () {
              var classList = $(this).attr("class").split(/\s+/);
 
             // This lists out all the classes within each card
-            console.log(classList);
+            // console.log(classList);
 
             $(this).removeClass("show");
             $(this).addClass("hide");
