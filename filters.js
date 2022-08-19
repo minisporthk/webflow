@@ -12,7 +12,7 @@ $(document).ready(function () {
              var classList = $(this).attr("class").split(/\s+/);
 
             // This lists out all the classes within each card
-            // console.log(classList);
+            console.log(classList);
 
             $(this).removeClass("show");
             $(this).addClass("hide");
@@ -272,6 +272,79 @@ $(document).ready(function () {
                 }
             }
 
+            // If 4 selectors chosen
+            if (venue != "" && age != "" && program != "" && day != "" && time === "") {
+                if (
+                    jQuery.inArray(venue, classList) !== -1 &&
+                    jQuery.inArray(age, classList) !== -1 &&
+                    jQuery.inArray(program, classList) !== -1 &&
+                    jQuery.inArray(day, classList) !== -1
+                ) {
+                    $(this).removeClass("hide");
+                    $(this).addClass("show");
+                }
+            }
+
+            if (venue != "" && age != "" && program != "" && day === "" && time != "") {
+                if (
+                    jQuery.inArray(venue, classList) !== -1 &&
+                    jQuery.inArray(age, classList) !== -1 &&
+                    jQuery.inArray(program, classList) !== -1 &&
+                    jQuery.inArray(time, classList) !== -1
+                ) {
+                    $(this).removeClass("hide");
+                    $(this).addClass("show");
+                }
+            }
+
+            if (venue != "" && age != "" && program === "" && day != "" && time != "") {
+                if (
+                    jQuery.inArray(venue, classList) !== -1 &&
+                    jQuery.inArray(age, classList) !== -1 &&
+                    jQuery.inArray(day, classList) !== -1 &&
+                    jQuery.inArray(time, classList) !== -1
+                ) {
+                    $(this).removeClass("hide");
+                    $(this).addClass("show");
+                }
+            }
+
+            if (venue != "" && age === "" && program != "" && day != "" && time != "") {
+                if (
+                    jQuery.inArray(venue, classList) !== -1 &&
+                    jQuery.inArray(program, classList) !== -1 &&
+                    jQuery.inArray(day, classList) !== -1 &&
+                    jQuery.inArray(time, classList) !== -1
+                ) {
+                    $(this).removeClass("hide");
+                    $(this).addClass("show");
+                }
+            }
+
+            if (venue === "" && age != "" && program != "" && day != "" && time != "") {
+                if (
+                    jQuery.inArray(age, classList) !== -1 &&
+                    jQuery.inArray(program, classList) !== -1 &&
+                    jQuery.inArray(day, classList) !== -1 &&
+                    jQuery.inArray(time, classList) !== -1
+                ) {
+                    $(this).removeClass("hide");
+                    $(this).addClass("show");
+                }
+            }
+
+            if (venue === "" && age != "" && program != "" && day != "" && time != "") {
+                if (
+                    jQuery.inArray(age, classList) !== -1 &&
+                    jQuery.inArray(program, classList) !== -1 &&
+                    jQuery.inArray(day, classList) !== -1 &&
+                    jQuery.inArray(time, classList) !== -1
+                ) {
+                    $(this).removeClass("hide");
+                    $(this).addClass("show");
+                }
+            }
+
             // If all selectors chosen
             if (venue != "" && age != "" && program != "" && day != "" && time != "") {
                 if (
@@ -285,7 +358,6 @@ $(document).ready(function () {
                     $(this).addClass("show");
                 }
             }
-
 
             // If all selectors not chosen
             if (venue === "" && age === "" && program === "" && day === "" && time === "") {
