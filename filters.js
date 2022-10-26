@@ -11,9 +11,6 @@ $(document).ready(function () {
         $(".project").each(function () {
              var classList = $(this).attr("class").split(/\s+/);
 
-            // This lists out all the classes within each card
-            console.log(classList);
-
             $(this).removeClass("show");
             $(this).addClass("hide");
             $(this).removeClass("active");
